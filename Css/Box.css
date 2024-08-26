@@ -4,20 +4,21 @@
     background-color: #f9f9f911;
     width: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'PK Maehongson', sans-serif !important; /* ฟอนต์ถูกกำหนดที่นี่ */
+    font-size: 20px;
+    font-family: 'Noto Sans Thai', sans-serif !important; /* ฟอนต์ถูกกำหนดที่นี่ */
     border-radius: 15px;
     border: none;
 }
 .content-box h2 {
     text-align: center;
     color: #333;
-    font-family: 'PK Maehongson', sans-serif; /* ฟอนต์ */
+    font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์ */
 }
 
 .content-box p {
     text-indent: 50px; /* ย่อหน้า */
     line-height: 1.6; /* ระยะห่างบรรทัด */
     color: #555;
-    font-family: 'PK Maehongson', sans-serif; /* ฟอนต์ */
+    font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์ */
 }
 
