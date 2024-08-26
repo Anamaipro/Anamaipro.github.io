@@ -3,10 +3,7 @@ body {
     font-family: 'Noto Sans Thai', sans-serif;
     margin: 0;
     padding: 0;
-}
-ul {
-    list-style: none;
-    padding: 0;
+    background-color: #f9f9f9;
 }
 
 /* Header Styles */
@@ -16,7 +13,6 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 .header img {
     height: 50px;
@@ -63,7 +59,6 @@ ul {
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
-    z-index: 15;
 }
 .header nav ul ul li {
     width: 200px;
@@ -72,8 +67,6 @@ ul {
     margin: 0;
     padding: 10px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 .header nav ul ul a:hover {
     background-color: rgba(0, 0, 0, 0.2);
@@ -83,34 +76,73 @@ ul {
     opacity: 1;
 }
 
+/* Main Header Styles */
+.main-header {
+    text-align: center;
+    margin: 20px 0;
+}
+.main-header h2 {
+    color: #333;
+    font-size: 2em;
+}
+
 /* Content Styles */
 .content {
+    text-align: center;
     padding: 20px 50px;
 }
 .content h2 {
-    color: #00796b;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 .content p {
     line-height: 1.6;
 }
 
-/* Container and Row Styles */
-.container {
-    max-width: 1170px;
+/* Cards Container Styles */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(1, 200px); /* Fixed card size */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1100px;
     margin: auto;
-    padding: 0 15px;
 }
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.card {
+    width: 175px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: top;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    max-width: 100px;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+.card h3 {
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #333;
+}
+.card a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Footer Styles */
 .footer {
     background-color: #ffffff;
     padding: 40px 0;
-    color: #ffffff;
+    color: #ffffff; /* Text color in footer */
 }
 .footer-col {
     width: 100%;
@@ -154,27 +186,78 @@ ul {
     display: inline-block;
     height: 40px;
     width: 40px;
-    background-color: #ffffff;
+    background-color: #00796b; /* Social icons background color */
     margin: 0 10px 10px 0;
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
-    color: #ffffff;
+    color: #ffffff; /* Social icons color */
     transition: all 0.5s ease;
 }
 .footer .social-links a:hover {
-    color: #ffffff;
     background-color: #ffffff;
+    color: #00796b;
 }
 
 /* Responsive Styles */
-@media (min-width: 768px) {
+@media (max-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 20px 30px;
+    }
+    .header nav ul {
+        flex-direction: column;
+    }
+    .header nav ul ul {
+        position: static;
+        display: none; /* Hide submenu by default */
+    }
+    .header nav ul li:hover > ul {
+        display: block; /* Show submenu on hover */
+    }
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    }
     .footer-col {
         width: 50%;
     }
 }
-@media (min-width: 992px) {
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+    .header nav a {
+        margin: 5px 0;
+        padding: 8px 10px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+    }
     .footer-col {
-        width: 25%;
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 10px;
+    }
+    .header nav ul {
+        flex-direction: column;
+    }
+    .header nav ul ul {
+        display: block; /* Show submenu in mobile view */
+    }
+    .cards-container {
+        grid-template-columns: 1fr; /* 1 column layout */
+    }
+    .footer-col {
+        width: 100%;
     }
 }
