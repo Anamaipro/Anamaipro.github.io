@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANAMAIPRO</title>
+    <link rel="stylesheet" href="Css/styles.css">
+    <link rel="stylesheet" href="Css/p1.css">
+    <link rel="stylesheet" href="Css/Box.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="C:\Users\DevilTor\Desktop\FRPROJECT\Picture\logo.png" alt="ANAMAIPRO">
+            <h1>ANAMAIPRO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li>
+                    <a href="Page2.html">E-LEARNING</a>
+                    <ul>
+                        <li><a href="Page2-A.html">การป้องกันและควบคุมมลพิษในที่ทำงาน</a></li>
+                        <li><a href="Page2-B.html">โรคและอุบัติเหตุที่เกิดจากการทำงาน</a></li>
+                        <li><a href="Page2-C.html">การปรับปรุงสภาพแวดล้อมการทำงาน</a></li>
+                        <li><a href="Page2-D.html">เครื่องหมายและสัญลักษณ์ความปลอดภัย</a></li>
+                        <li><a href="Page2-E.html">ความรู้ทั่วไปเกี่ยวกับความปลอดภัย</a></li>
+                    </ul>
+                </li>
+                <li><a href="Page3.html">SAFETY LAW</a>
+                    <ul>
+                        <li><a href="Page3-A.html">ความเป็นมาของกฎหมายที่เกี่ยวข้องกับอาชีวอนามัยและความปลอดภัย</a></li>
+                        <li><a href="Page3-B.html">พรบ.ความปลอดภัย อาชีวอนามัยและสภาพแวดล้อมในการทำงาน พ.ศ.2554</a></li>
+                        <li><a href="Page3-C.html">กฏกระทรวงการทำงานเกี่ยวกับไฟฟ้า</a></li>
+                        <li><a href="Page3-D.html">กฏกระทรวงการทำงานเกี่ยวกับอากาศ พ.ศ.2562</a></li>
+                        <li><a href="Page3-E.html">หน่วยงานที่เกี่ยวข้องกับงานด้านอาชีวะอนามัยและความปลอดภัย</a></li>
+    
+                    </ul>
+                </li>
+                <li><a href="Page4.html">ISO</a>
+                    <ul>
+                        <li><a href="Page4-A.html">ISO 14000</a></li>
+                        <li><a href="Page4-B.html">ISO 18000</a></li>
+                    </ul>
+                </li>
+                <li><a href="Page5.html">ABOUT</a>
+                    <ul>
+                        <li><a href="Page5-A.html">ประวัติผู้จัดทำ</a></li>
+                        <li><a href="Page5-B.html">เอกสารขออนุญาตสัมภาษณ์</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="slider">
+        <div class="slides">
+            <!-- รูปภาพสไลด์ -->
+        </div>
+        <button id="prevBtn" class="slider-btn">Prev</button>
+        <button id="nextBtn" class="slider-btn">Next</button>
+    </section>
+
+    <div class="indicator">
+        <span class="active" data-slide="0"></span>
+        <span data-slide="1"></span>
+        <span data-slide="2"></span>
+    </div>
+    <section class="services">
+        <h2>More Information</h2>
+        <div>
+            <a href="https://international.fda.moph.go.th/opt-division/%20who">
+                <img src="C:\Users\DevilTor\Desktop\FRPROJECT\Picture\[p1]WHO.png" alt="E-Learning">
+                <p>WHO</p>
+            </a>
+        </div>
+        <div>
+            <a href="https://santofire.co.th/nfpa/">
+                <img src="C:\Users\DevilTor\Desktop\FRPROJECT\Picture\[p1]NFPA.png" alt="SafteyLaw">
+                <p>NFPA</p>
+            </a>
+        </div>
+        <div>
+            <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@asia/@ro-bangkok/documents/publication/wcms_098257.pdf">
+                <img src="C:\Users\DevilTor\Desktop\FRPROJECT\Picture\[p1]ILO.png" alt="ISO">
+                <p>ILO</p>
+            </a>
+        </div>
+        <div>
+            <a href="https://www.ohswa.or.th/">
+                <img src="C:\Users\DevilTor\Desktop\FRPROJECT\Picture\[p1]ESG.png" alt="ABOUT">
+                <p>ESG</p>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelector('.slides');
+    const indicators = document.querySelectorAll('.indicator span');
+    const slideData = [
+        {
+            url: 'https://www.jorportoday.com/news/pollution-pm-2-5/',
+            img: 'https://www.jorportoday.com/news/wp-content/uploads/2023/12/ฝุ่น-PM-2.5-กทม-1.jpg'
+        },
+        {
+            url: 'https://www.jorportoday.com/news/there-was-a-fire-at-a-chemical-factory/',
+            img: 'https://www.jorportoday.com/news/wp-content/uploads/2023/12/เสียงระเบิดดังสนั่น-ก่อนเกิดเหตุไฟไหม้โรงงานสารเคมี-นิคมบางปู-1.jpg'
+        },
+        {
+            url: 'https://www.jorportoday.com/news/forest-fires-in-lebanon/',
+            img: 'https://www.jorportoday.com/news/wp-content/uploads/2023/11/ไฟป่าลุกไหม้รุนแรงในสเปน-01-1-696x418.jpg'
+        }
+    ];
+
+    slides.innerHTML = slideData.map(slide => `
+        <a href="${slide.url}" target="_blank">
+            <img src="${slide.img}" alt="Slide Image">
+        </a>
+    `).join('');
+
+    let counter = 0;
+
+    const updateSlidePosition = () => {
+        const size = slides.clientWidth; // คำนวณขนาดใหม่ของ slides
+        slides.style.transform = `translateX(${-size * counter}px)`;
+    };
+
+    const updateIndicators = () => {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === counter);
+        });
+    };
+
+    const goToSlide = (index) => {
+        counter = index;
+        updateSlidePosition();
+        updateIndicators();
+    };
+
+    const nextSlide = () => {
+        counter = (counter + 1) % slideData.length;
+        goToSlide(counter);
+    };
+
+    const prevSlide = () => {
+        counter = (counter - 1 + slideData.length) % slideData.length;
+        goToSlide(counter);
+    };
+
+    // ตรวจสอบว่ามีปุ่มสำหรับ prevBtn และ nextBtn ใน HTML หรือไม่
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+    // Event listener สำหรับปุ่ม indicator
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', () => {
+            const slideIndex = parseInt(indicator.getAttribute('data-slide'), 10);
+            goToSlide(slideIndex);
+        });
+    });
+
+    // เพิ่มการเลื่อนอัตโนมัติ
+    setInterval(nextSlide, 3000); // เปลี่ยนสไลด์ทุก 3 วินาที
+
+    // อัปเดตขนาดสไลด์เมื่อขนาดหน้าต่างเปลี่ยนแปลง
+    window.addEventListener('resize', updateSlidePosition);
+});
+    </script>
+
+    <div main class="content-box">
+        <section class="content">
+            <h2>อาชีวอนามัยและความปลอดภัย</h2>
+            <p><strong>อาชีวอนามัย</strong> (Occupational Health) เป็นวิชาวิทยาศาสตร์ในสาขาวิชาสุขศึกษาที่เกี่ยวข้องกับการดูแลสุขภาพอนามัยของผู้ประกอบอาชีพทุกอาชีพ และผลกระทบที่เกิดจากการทำงานที่อาจก่อให้เกิดอันตรายต่อสุขภาพ เพื่อการดำเนินการให้ผู้ประกอบอาชีพหรือแรงงานเกิดความปลอดภัยสูงสุด ได้รับการคุ้มครองและสิทธิประโยชน์ตามกฎหมาย</p>
+            <p>คำว่า อาชีวอนามัย “Occupational Health” เป็นคำสมาสระหว่างคำว่า อาชีวะ หรือ อาชีพ กับคำว่า อนามัย หรือ สุขภาพ</p>
+            <p><strong>อาชีวะ</strong>(Occupation) หมายถึง การเลี้ยงชีพ การประกอบอาชีพ บุคคลที่ประกอบสัมมาชีพ หรือคนที่ประกอบอาชีพทุกสาขาอาชีพ</p>
+            <p><strong>อนามัย</strong> (Health) หมายถึง สุขภาพอนามัย ความไม่มีโรค หรือสภาวะความสมบูรณ์ทั้งร่างกายและจิตใจของผู้ประกอบอาชีพ</p>
+            <p>จากคำสองคำรวมกันเป็น อาชีวอนามัย และมีความหมายร่วมกันของอาชีวอนามัยว่า หมายถึง งานที่เกี่ยวกับการส่งเสริม ควบคุม ดูแล การป้องกันโรค ตลอดจนอุบัติเหตุและดำรงรักษาสุขภาพอนามัยทั้งมวลของผู้ประกอบอาชีพให้มีความปลอดภัย มีสภาพร่างกายและจิตใจที่สมบูรณ์ แข็งแรง</p>
+            <p>ซึ่งสอดคล้องกับองค์การแรงงานระหว่างประเทศ (Labour Organization : ILO) ได้ให้ความหมายของอาชีวอนามัยไว้ว่า หมายถึง งานที่เกี่ยวข้องกับการส่งเสริมธำรงไว้ซึ่งสุขภาพทางกาย ทางจิตใจ และทางสังคมที่ดีงามของผู้ประกอบอาชีพทั้งมวล</p>
+            <p>ความปลอดภัย (Safety) หมายถึง สภาพแวดล้อมของการทำงาน ที่ปราศจากภัยคุกคาม ไม่มีอันตราย (Danger) และความเสี่ยงใด ๆ (Risk) ในทางปฏิบัตินั้นอาจจะไม่สามารถควบคุมอัตรายหรือความเสี่ยงในการทำงานที่มีผลต่อสุขภาพการบาดเจ็บ การพิการ การเสียชีวิต มีการดำเนินงานและกำหนดกิจกรรมด้านความปลอดภัยเพื่อให้เกิดอันตรายหรือความเสี่ยงน้อยที่สุดเท่าที่จะทำได้</p>
+    </div>
+    
+    
+    
+</body>
+</html>
