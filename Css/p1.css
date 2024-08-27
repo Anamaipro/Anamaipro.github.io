@@ -191,43 +191,53 @@ body {
 .services {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
-    margin: 40px 20px;
-}
-.services div {
-    flex: 1 1 100px;
-    max-width: 100px;
-    text-align: center;
-}
-.services img {
-    width: 75%; /* ปรับขนาดของรูปภาพให้เต็มความกว้างของ div ที่บรรจุ */
-    height: auto; /* รักษาสัดส่วนของรูปภาพ */
-    max-width: 200px; /* กำหนดความกว้างสูงสุดของรูปภาพ */
-}
-.services {
-    text-align: center;
     padding: 20px;
+    background-color: #f9f9f9; /* พื้นหลังสีขาวนวล */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .services h2 {
-    text-align: left; /* ทำให้หัวข้อไปทางซ้ายสุด */
-    margin-left: -50px; /* เพิ่มระยะห่างจากขอบซ้าย */
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: #003366; /* สีฟ้าคล้ายในภาพ */
+    margin-bottom: 20px;
 }
+
 .services div {
-    display: inline-block;
+    flex: 1;
+    max-width: 200px;
     margin: 10px;
     text-align: center;
 }
+
 .services a {
-    text-decoration: none;
-    color: black;
-}
-.services img {
     display: block;
-    margin: 0 auto;
+    text-decoration: none;
+    color: inherit;
+    padding: 20px;
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.services a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.services img {
+    width: 50px; /* ขนาดไอคอน */
+    height: 50px; /* ขนาดไอคอน */
+    margin-bottom: 10px;
+}
+
 .services p {
-    font-size: 1.2em; /* ขนาดตัวอักษรใหญ่ขึ้น */
-    text-align: center; /* จัดข้อความให้ตรงกลาง */
-    color: #333; /* เปลี่ยนสีข้อความให้ชัดเจน */
+    margin: 0;
+    font-size: 16px;
+    color: #666666; /* สีเทาสำหรับข้อความ */
 }

@@ -6,13 +6,14 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Header Styles (Updated to match CSS1) */
+/* Header Styles */
 .header {
     background-color: #00796b;
     padding: 10px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 .header img {
     height: 50px;
@@ -59,7 +60,6 @@ body {
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
-    z-index: 15;
 }
 .header nav ul ul li {
     width: 200px;
@@ -68,8 +68,6 @@ body {
     margin: 0;
     padding: 10px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 .header nav ul ul a:hover {
     background-color: rgba(0, 0, 0, 0.2);
@@ -77,6 +75,17 @@ body {
 .header nav ul li:hover > ul {
     max-height: 500px;
     opacity: 1;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 20px; /* Adjust as needed */
+    top: 35px; /* Adjust as needed */
 }
 
 /* Main Header Styles */
@@ -245,17 +254,36 @@ body {
     .footer-col {
         width: 50%;
     }
+    .menu-toggle {
+        display: flex;
+    }
 }
 
 @media (max-width: 576px) {
     .header {
         padding: 10px;
     }
+    .header nav {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        background: #00796b;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
     .header nav ul {
         flex-direction: column;
+        height: 100%;
+        overflow-y: auto;
     }
     .header nav ul ul {
-        display: block; /* Show submenu in mobile view */
+        position: static;
+        display: block; /* Show submenu */
+    }
+    .header nav.show {
+        transform: translateX(0);
     }
     .cards-container {
         grid-template-columns: 1fr; /* 1 column layout */
