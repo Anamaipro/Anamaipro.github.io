@@ -16,7 +16,6 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 .header img {
     height: 50px;
@@ -82,6 +81,7 @@ ul {
     max-height: 500px;
     opacity: 1;
 }
+/* Menu Toggle Button */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -95,6 +95,83 @@ ul {
     margin: 5px 0;
     transition: 0.4s;
 }
+
+/* Submenu Toggle Button */
+.submenu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .header nav.active {
+        display: block;
+        position: absolute;
+        top: 100px; /* ปรับตามความสูงของ header */
+        left: 0;
+        width: 100%;
+        background-color: #00796b;
+        z-index: 1000;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .header nav ul li {
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .header nav ul ul {
+        display: none;
+        padding-left: 20px;
+    }
+
+    .header nav ul li:hover > ul {
+        display: none;
+    }
+
+    .submenu-toggle {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Show submenu when submenu toggle is active */
+    .submenu-toggle.active + ul {
+        display: block;
+    }
+}
+
 
 /* Content Styles */
 .content {
@@ -172,50 +249,10 @@ ul {
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
-    color: #ffffff;
+    color: #24262b;
     transition: all 0.5s ease;
 }
 .footer .social-links a:hover {
-    color: #ffffff;
+    color: #24262b;
     background-color: #ffffff;
 }
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-    .footer-col {
-        width: 50%;
-    }
-}
-@media (min-width: 992px) {
-    .footer-col {
-        width: 25%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-            .header nav ul {
-                flex-direction: column;
-                position: absolute;
-                top: 60px; /* ปรับตามความสูงของ header */
-                left: 0;
-                width: 100%;
-                background-color: #00796b;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-in-out;
-            }
-
-            .header nav ul.show {
-                max-height: 300px; /* ปรับความสูงตามจำนวนเมนู */
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .header nav ul li:hover > ul {
-                max-height: none;
-                opacity: 1;
-                position: relative;
-            }
-        }

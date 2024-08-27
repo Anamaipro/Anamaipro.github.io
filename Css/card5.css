@@ -1,12 +1,15 @@
-/* Styles for the card container */
+/* Container and Row Styles */
 .cards-container {
     display: flex;
     justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
     gap: 20px;
     padding: 20px;
     max-width: 100%; /* Adjust max width */
     margin: 0 auto; /* Center for overflow content */
     flex-wrap: wrap; /* Allow wrapping of cards */
+    text-align: center; /* Center text inside cards */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
 }
 
 /* Styles for individual cards */
@@ -20,6 +23,7 @@
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
+    /* Remove left property as it's not needed for centering */
 }
 
 /* Hover effect */

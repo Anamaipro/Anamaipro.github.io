@@ -6,7 +6,7 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Header Styles */
+/* Header Styles (Updated to match CSS1) */
 .header {
     background-color: #00796b;
     padding: 10px 50px;
@@ -103,7 +103,7 @@ body {
 /* Cards Container Styles */
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(2, 200px); /* Fixed card size */
+    grid-template-columns: repeat(3, 200px); /* Fixed card size */
     gap: 20px;
     padding: 20px;
     max-width: 1100px;
@@ -259,5 +259,98 @@ body {
     }
     .footer-col {
         width: 100%;
+    }
+}
+/* Container and Row Styles */
+.cards-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%; /* Adjust max width */
+    margin: 0 auto; /* Center for overflow content */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    text-align: center; /* Center text inside cards */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+}
+
+/* Styles for individual cards */
+.card {
+    width: 175px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    /* Remove left property as it's not needed for centering */
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Styles for card images */
+.card img {
+    width: 140px; /* Fixed width for the circle */
+    height: 140px; /* Fixed height for the circle */
+    object-fit: cover;
+    border-radius: 50%; /* Make image circular */
+    margin-bottom: 10px; /* Space between image and text */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles for card headings */
+.card h3 {
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Styles for card links */
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive Styles */
+
+/* For small devices (phones, 767px and below) */
+@media (max-width: 767px) {
+    .card {
+        width: 100%; /* Full width for better responsiveness */
+        max-width: 300px; /* Maximum width */
+        height: auto; /* Adjust height based on content */
+    }
+    
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+}
+
+/* For medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .card {
+        width: 45%; /* Adjust width for better fit */
+        height: auto; /* Adjust height based on content */
+    }
+
+    .cards-container {
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+}
+
+/* For large devices (desktops, 992px and above) */
+@media (min-width: 992px) {
+    .card {
+        width: 175px; /* Original width */
+        height: 300px; /* Original height */
     }
 }
