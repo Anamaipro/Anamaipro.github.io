@@ -1,0 +1,103 @@
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none; /* ซ่อนปุ่มในโหมด desktop */
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center; /* กำหนดให้อยู่กึ่งกลาง */
+    justify-content: center;
+    width: 40px; /* กำหนดความกว้างคงที่ */
+    height: 40px; /* กำหนดความสูงคงที่ */
+    position: relative; /* เพื่อให้สามารถกำหนดตำแหน่งแบบ absolute ภายใน media query */
+    z-index: 1000; /* ให้ปุ่มอยู่ด้านบนสุด */
+}
+
+.menu-toggle span {
+    width: 30px; /* ขนาดของแถบของ menu */
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Submenu Toggle Button */
+.submenu-toggle {
+    display: none; /* ซ่อนปุ่มในโหมด desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* แสดงปุ่มในโหมดมือถือ */
+        position: fixed; /* ให้ปุ่มอยู่ตำแหน่งคงที่เมื่อ scroll */
+        top: 35px; /* ปรับตำแหน่งแนวตั้ง */
+        right: 20px; /* ปรับตำแหน่งแนวนอน */
+        z-index: 1000; /* เพื่อให้ปุ่มอยู่ด้านบนสุด */
+    }
+
+    .header nav {
+        display: none; /* ซ่อนเมนูหลักในโหมดมือถือ */
+    }
+
+    .header nav.active {
+        display: block; /* แสดงเมนูเมื่อคลิกที่ปุ่ม toggle */
+        position: absolute; /* ให้เมนูแสดงผลแบบเต็มหน้าจอ */
+        top: 90px; /* ปรับความสูงของ header */
+        left: 0;
+        width: 100%;
+        background-color: #00796b;
+        z-index: 999; /* ให้อยู่ใต้ปุ่ม toggle */
+    }
+
+    .header nav ul {
+        flex-direction: column; /* แสดงเมนูย่อยในแนวตั้ง */
+        padding: 0;
+        margin: 0;
+    }
+
+    .header nav ul li {
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10px 15px; /* เพิ่ม padding ให้เมนูหลัก */
+    }
+
+    .header nav ul ul {
+        display: none; /* ซ่อนเมนูย่อย */
+        padding-left: 20px; /* เพิ่ม padding ให้เมนูย่อย */
+        background-color: #018e7d; /* สีเขียวอ่อน */
+    }
+
+    .header nav ul li:hover > ul {
+        display: none; /* ซ่อนเมนูย่อยเมื่อ hover */
+    }
+
+    .submenu-toggle {
+        display: inline-block; /* แสดงปุ่ม submenu toggle ในโหมดมือถือ */
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%); /* ให้ปุ่ม submenu toggle อยู่กึ่งกลางในแนวตั้ง */
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0; /* ซ่อนเส้นกลาง */
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Show submenu when submenu toggle is active */
+    .submenu-toggle.active + ul {
+        display: block; /* แสดงเมนูย่อยเมื่อกดปุ่ม submenu toggle */
+    }
+}
