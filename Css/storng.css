@@ -1,0 +1,4 @@
+a.strong-link {
+    font-weight: bold; /* ทำให้ข้อความเป็นตัวหนา */
+    text-decoration: none; /* ลบเส้นใต้ลิงก์ */
+}

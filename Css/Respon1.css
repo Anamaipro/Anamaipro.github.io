@@ -88,13 +88,14 @@ body {
 
 /* Content Styles */
 .content {
-    text-align: center;
+    text-align: justify;
     padding: 20px 50px;
 }
 .content h2 {
     color: #333;
     font-size: 2em;
     margin-bottom: 20px;
+    text-align: center;
 }
 .content p {
     line-height: 1.6;
