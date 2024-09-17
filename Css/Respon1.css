@@ -88,7 +88,7 @@ body {
 
 /* Content Styles */
 .content {
-    text-align: justify;
+    text-align: left;
     padding: 20px 50px;
 }
 .content h2 {

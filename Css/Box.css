@@ -8,11 +8,11 @@
     font-family: 'Noto Sans Thai', sans-serif !important;
     border-radius: 15px;
     border: none;
-    text-align: left; /* ข้อความทั้งหมดชิดซ้าย */
+    text-align: left;
 }
 
 .content-box h2 {
-    text-align: center; /* เฉพาะหัวข้อชิดกลาง */
+    text-align: center;
     color: #333;
     font-family: 'Noto Sans Thai', sans-serif;
 }
@@ -22,4 +22,22 @@
     line-height: 1.6;
     color: #555;
     font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* Adjust for small screens (phones) */
+@media (max-width: 767px) {
+    .content-box {
+        width: 95%; /* เพิ่มความกว้างเพื่อใช้พื้นที่หน้าจอมากขึ้น */
+        font-size: 16px; /* ลดขนาดฟอนต์ให้เหมาะสมกับหน้าจอเล็ก */
+        padding: 15px; /* ลด padding เพื่อให้เนื้อหาดูกะทัดรัด */
+        margin: 10px auto; /* ลด margin เพื่อลดช่องว่าง */
+    }
+
+    .content-box p {
+        text-indent: 30px; /* ลด text-indent เพื่อให้อ่านง่ายขึ้นบนมือถือ */
+    }
+
+    .content-box h2 {
+        font-size: 24px; /* ลดขนาดหัวข้อเพื่อให้เหมาะกับหน้าจอมือถือ */
+    }
 }

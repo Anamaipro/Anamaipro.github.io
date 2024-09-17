@@ -245,19 +245,25 @@ body {
 }
 
 @media (max-width: 576px) {
-    .header {
-        padding: 10px;
-    }
-    .header nav ul {
-        flex-direction: column;
-    }
-    .header nav ul ul {
-        display: block; /* Show submenu in mobile view */
-    }
     .cards-container {
         grid-template-columns: 1fr; /* 1 column layout */
+        justify-items: center; /* จัดการ์ดให้อยู่ตรงกลาง */
+        padding: 10px; /* ลด padding ของ container */
     }
-    .footer-col {
-        width: 100%;
+
+    .card {
+        width: 90%; /* ให้การ์ดกว้าง 90% ของหน้าจอ */
+        height: auto; /* ปรับความสูงของการ์ดให้ยืดหยุ่น */
+        padding: 15px; /* ลด padding ภายในการ์ด */
+    }
+
+    .card img {
+        max-width: 80px; /* ลดขนาดรูปในการ์ด */
+        margin-bottom: 20px; /* ลดระยะห่างระหว่างรูปและข้อความ */
+    }
+
+    .card h3 {
+        font-size: 1em; /* ลดขนาดตัวอักษรในหัวข้อ */
     }
 }
+
