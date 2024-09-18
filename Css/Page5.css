@@ -97,3 +97,16 @@ body {
     font-size: 2em;
     margin-bottom: 20px;
 }
+
+@media (max-width: 767px) {
+    .card {
+        width: 100%; /* Full width for better responsiveness */
+        max-width: 300px; /* Maximum width */
+        height: auto; /* Adjust height based on content */
+    }
+    
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+}
